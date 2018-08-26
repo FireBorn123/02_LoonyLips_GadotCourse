@@ -1,0 +1,14 @@
+[
+		{
+		"prompt" : ["name", "number",  "fast food", "number", "openable object"],
+		"story" : "Once upon a time %s bought %s %s's even though only %s cound fit in the %s."
+		},
+		{
+		"prompt" : ["name", "object",  "adjective", "adverb"],
+		"story" : "In a land never seen %s found a %s, and used it for his own %s purposes. From there time progressed %s"
+		},
+		{
+		"prompt" : ["object", "noun",  "place", "adjective", "adjective", "adjective", "noun"],
+		"story" : "In a galexy far far away a tiny %s tried to find %s way to the %s. It was a %s and %s jorney that was %s with %s."
+		}
+	]

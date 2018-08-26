@@ -1,0 +1,6 @@
+
+  {"begin_game_text":"Welcome to Loony Lips, the choose your word word game, to create a funny story!\n",
+  "game_prompt": "Can I have a %s please?",
+  "game_prompt_1": "Can I have a ",
+  "game_prompt_2": " please?",
+  "end_game_text": "Play Again?"}
