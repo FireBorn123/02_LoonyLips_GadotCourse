@@ -1,14 +1,15 @@
 extends Node2D
 
 
-var game_text = get_from_json("other_strings.json")
 var player_words = [] # the words that the player chooses to use
-var begin_game_text = game_text.begin_game_text
+var game_text # All of the text that's displayed to the player
 var current_story
 
 func _ready():
 	set_random_story()
-	$Blackboard/StoryText.bbcode_text = (begin_game_text + game_text.game_prompt_1 + current_story.prompt[player_words.size()] + game_text.game_prompt_2)
+	game_text = get_from_json("other_strings.json")
+	$Blackboard/StoryText.bbcode_text = (game_text.begin_game_text)
+	prompt_player()
 	$Blackboard/TextBox.clear()
 
 func set_random_story():
@@ -37,10 +38,12 @@ func _on_TextureButton_pressed():
 func _on_TextBox_text_entered(new_text):
 	player_words.append(new_text)
 	$Blackboard/TextBox.clear()
+	$Blackboard/StoryText.clear()
 	check_player_word_length()
 
 func prompt_player():
-	$Blackboard/StoryText.bbcode_text = (game_text.game_prompt_1 + current_story.prompt[player_words.size()] + game_text.game_prompt_2)
+	var next_prompt = current_story.prompt[player_words.size()]
+	$Blackboard/StoryText.bbcode_text += (game_text.game_prompt % next_prompt)
 
 
 func check_player_word_length():
